@@ -16,3 +16,9 @@ h1{
     left: 0;
     bottom: 0;
 }
+
+#ticket-type{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
