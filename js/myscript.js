@@ -1,7 +1,7 @@
 //Inizializzazione variabili globali
 let ticketPriceReduced;
 let ticketPriceSenior;
-let priceMessage;
+let price;
 //Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero.
 const userKm = parseInt(prompt("Inserisci quanti chilometri vuoi percorrere"));
 const userAge = parseInt(prompt("Inserisci la tua eta"));
@@ -14,17 +14,17 @@ console.log("Il prezzo intero del biglietto è €",ticketPrice);
 if(userAge < 18) { //va applicato uno sconto del 20% per i minorenni
     ticketPriceReduced = (ticketPrice - ((ticketPrice * 20) / 100)).toFixed(2);
     console.log("Biglietto ridotto €",ticketPriceReduced);
-    priceMessage = `Il costo del tuo biglietto è di €${ticketPriceReduced}`;
+    price = ticketPriceReduced;
 } else if(userAge >= 65) { //va applicato uno sconto del 40% per gli over 65.
     ticketPriceSenior = (ticketPrice - ((ticketPrice * 40) / 100)).toFixed(2);
     console.log("Biglietto senior €",ticketPriceSenior);
-    priceMessage = `Il costo del tuo biglietto è di €${ticketPriceSenior}`;
+    price = ticketPriceSenior;
 } else{
-    priceMessage = `Il costo del tuo biglietto è di €${ticketPrice}`;
+    price = ticketPrice;
 }
 
 //L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
-document.getElementById("ticket-price").innerHTML = priceMessage;
+document.getElementById("ticket-price").innerHTML = `Il costo del tuo biglietto è di € ${price}`;
 
 
 document.getElementById("user-info").innerHTML = `Il biglietto è utilizzabile per ${userKm}km`;
